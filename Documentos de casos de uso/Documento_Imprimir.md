@@ -1,6 +1,6 @@
 ﻿## Caso de uso: Imprimir
 **Descripción breve:** este caso de uso describe el proceso por medio del cual el paciente imprime el turno.                                                    
-**Actor principal:** Paciente  
+**Actor principal:** Paciente.                                    
 **Actor Secundario:** ---  
 **Trigger:** Este caso de uso se activa cuando el paciente quiere imprimir el turno.
 
@@ -13,8 +13,8 @@
   
 ## Cursos Alternativos
 **Curso Alternativo:** El paciente no quiere imprimir                                                                                               
-2) El sistema consulta al paciente si quiere imprimir el turno.                                                               
-2.1) El paciente deniega querer imprimir el turno .                                            
+2) El sistema consulta al paciente si quiere imprimir el turno.                                                                                              
+2.1) El paciente deniega querer imprimir el turno.                                                                                    
 2.2) El sistema verifica la respuesta del paciente.                                                                     
 2.3) Vuelve a 5).                                                                                    
 
