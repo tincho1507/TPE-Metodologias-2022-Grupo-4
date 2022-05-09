@@ -12,7 +12,7 @@
 5) El caso de uso termina.
   
 ## Cursos Alternativos
-**Curso Alternativo:** El paciente no quiere imprimi r                                               
+**Curso Alternativo:** El paciente no quiere imprimir                                                                                               
 2) El sistema consulta al paciente si quiere imprimir el turno.                                                               
 2.1) El paciente deniega querer imprimir el turno .                                            
 2.2) El sistema verifica la respuesta del paciente.                                                                     
