@@ -36,6 +36,6 @@ Cursos Alternativos
 **Suposiciones:** Que se haya elegido un medico y un rango de fechas.  
 **Finalización del caso de uso:** El caso de uso finaliza cuando:  
 
- - El paciente selecciona un turno y este se actualiza.
+ - El paciente selecciona un turno y éste se actualiza o 
  - El paciente no confirma sus datos.
 
