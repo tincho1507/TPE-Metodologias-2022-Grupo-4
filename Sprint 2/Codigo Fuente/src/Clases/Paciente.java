@@ -33,6 +33,10 @@ public class Paciente extends Persona {
 		if (!turnos.contains(t))
 			turnos.add(t);
 	}
+	
+	public String getObraSocial() {
+		return obraSocial;
+	}
 
 	@Override
 	public ArrayList<Turno> listarTurnos() {
@@ -66,6 +70,19 @@ public class Paciente extends Persona {
 		// TODO Auto-generated method stub
 		return super.toString() + " obraSocial=" + obraSocial + ", nroAfiliado=" + nroAfiliado + ", telefono="
 				+ telefono + ", direccion=" + direccion + "]";
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		try {
+			Paciente p = (Paciente)o;
+			if (this.getDni() == p.getDni())
+				return true;
+			return false;
+		}
+		catch (Exception e){
+			return false;
+		}
 	}
 
 }

@@ -10,17 +10,12 @@ public abstract class Persona {
 	private String apellido;
 	private int dni;
 	private String mail;
-	private String obraSocial;
 	public Persona(String nombre, String apellido, int dni, String mail) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
 		this.mail = mail;
-	}
-	
-	public String getObraSocial() {
-		return this.obraSocial;
 	}
 	
 	public String getNombre() {
@@ -53,10 +48,6 @@ public abstract class Persona {
 
 	public void setMail(String mail) {
 		this.mail = mail;
-	}
-
-	public void setObraSocial(String obraSocial) {
-		this.obraSocial = obraSocial;
 	}
 
 	public abstract ArrayList<Turno> listarTurnos();

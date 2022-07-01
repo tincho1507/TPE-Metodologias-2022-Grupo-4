@@ -83,6 +83,19 @@ public class Medico extends Persona{
 		return false;
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		try {
+			Medico m = (Medico)o;
+			if (this.nroMatricula == m.getNroMatricula())
+				return true;
+			return false;
+		}
+		catch (Exception e) {
+			return false;
+		}
+	}
+	
 	
 	
 	
