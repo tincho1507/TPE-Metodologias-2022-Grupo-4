@@ -54,5 +54,18 @@ public class Turno {
 		return this.fecha;
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		try {
+			Turno t = (Turno)o;
+			if (this.fecha.equals(t.getFecha()) && t.tieneMedico(this.medico))
+				return true;
+			return false;
+		}
+		catch (Exception e) {
+			return false;
+		}
+	}
+	
 
 }
