@@ -19,12 +19,12 @@ import Menu.Menu;
 public class Main {
 	
 	public static void main(String[] args) {
-		InstitucionMedica i = generarInstitucion(); //genera los datos para la prueba
+		InstitucionMedica institucion = generarInstitucion(); //genera los datos para la prueba
 
 		Direccion d = new Direccion("Calle falsa", 123, "Ciudad");
 		//Creo un paciente con nombre,apellido,dni,mail,telefono,direccion,obraSocial
 
-		Paciente p = new Paciente("Miguel", "Benitez", 12345, "mail", "OS1", 123489,12334, d );
+		Paciente paciente = new Paciente("Miguel", "Benitez", 12345, "mail", "OS1", 123489,12334, d );
 		
 		Scanner selector = new Scanner (System.in);
 		
@@ -36,12 +36,12 @@ public class Main {
 			while (opcion != 2)
 			{
 
-			//Primero el paciente debe elegir que quiere hacer
+			//Primero el paciente debe elegir que quiere hacer 
 
 				Menu.printMenuPaciente();
 				opcion = Integer.parseInt(selector.nextLine());
 				
-				//Si el paciente quiere ver sus proximos turnos
+				//Si el paciente quiere sacar turno
 				if (opcion == 0)
 				{
 					//El usuario ingresa si quiere filtrar por obra social y especialidad
@@ -52,14 +52,14 @@ public class Main {
 				  //Si quiere filtrar por obra social y especialidad
 				  if (resultado == 1)
 				  {
-					   FiltroMedico filtroCompuesto = p.generarFiltro(selector);
-					   medicosDisponible = (i.listarMedicosFiltro(filtroCompuesto));
+					   FiltroMedico filtroCompuesto = paciente.generarFiltro(selector);
+					   medicosDisponible = (institucion.listarMedicosFiltro(filtroCompuesto));
 					}
 				  else
 				  {
 					  //Si no quiere filtrar por obra social y especialidad
 
-					   medicosDisponible = (i.listarMedicosFiltro(null));
+					   medicosDisponible = (institucion.listarMedicosFiltro(null));
 
 					}
 					if (medicosDisponible.size() != 0){
@@ -71,11 +71,10 @@ public class Main {
 						//El usuario ingresa el medico que quiere ver sus proximos turnos
 						Menu.printNumMedico();
 						int indiceMedicoSeleccionado = Integer.parseInt(selector.nextLine());
-						if (indiceMedicoSeleccionado >= 0 && indiceMedicoSeleccionado < medicosDisponible.size())
-						{
+						if (indiceMedicoSeleccionado >= 0 && indiceMedicoSeleccionado < medicosDisponible.size()){
 							medicoSeleccionado = medicosDisponible.get(indiceMedicoSeleccionado);
 						
-							if (medicoSeleccionado.trabajaObraSocial(p.getObraSocial())){
+							if (medicoSeleccionado.trabajaObraSocial(paciente.getObraSocial())){
 								Error.getError0();
 							}
 							System.out.println("El medico inicia a trabajar a las : " + medicoSeleccionado.getHoraInicio() + " y termina de trabajar a las : " + medicoSeleccionado.getHoraFin());
@@ -96,13 +95,13 @@ public class Main {
 							FiltroTurnoAnd filtroCompuesto = new FiltroTurnoAnd(filtroRango, filtroHorario);
 							
 							//Se obtienen y se muestran los turnos disponibles
-							ArrayList<Turno> turnosDisponible = i.mostrarTurnosDisponibles(filtroCompuesto, medicoSeleccionado);
+							ArrayList<Turno> turnosDisponible = institucion.mostrarTurnosDisponibles(filtroCompuesto, medicoSeleccionado);
 							if (turnosDisponible.size() == 0){
 								Error.getError1();
 								int proximaSemanaSeleccionada = Integer.parseInt(selector.nextLine());
 								if (proximaSemanaSeleccionada == 1){
 									filtroRango = new FiltroRango(fechaInicioLocal.plusDays(7), fechaFinLocal.plusDays(7));
-									turnosDisponible = i.mostrarTurnosDisponibles(filtroCompuesto, medicoSeleccionado);
+									turnosDisponible = institucion.mostrarTurnosDisponibles(filtroCompuesto, medicoSeleccionado);
 								}
 								
 							}
@@ -115,10 +114,10 @@ public class Main {
 							//Se ingresa el numero de turno que quiere reservar
 							System.out.println("Ingrese el numero de turno");
 							int nroTurnoSeleccionado = Integer.parseInt(selector.nextLine());
-							if ( nroTurnoSeleccionado < turnosDisponible.size()){
+							if (nroTurnoSeleccionado < turnosDisponible.size()){
 								//Se reconfirma sus datos
 								System.out.println("Por favor reconfirme sus datos:");
-								System.out.println(p.toString());
+								System.out.println(paciente.toString());
 								System.out.println("Ingrese 1 para confirmar");
 								int confirmacionSeleccionada = Integer.parseInt(selector.nextLine());
 								//Aca se saca turno
@@ -146,7 +145,7 @@ public class Main {
 				{
 					if (opcion == 1)
 					{
-						//Ver sus proximos turnos no las vamos a hacer
+						//Ver sus proximos turnos
 					}
 					else
 					{
@@ -172,7 +171,7 @@ public class Main {
 			System.out.println("Ingrese usuario y contraseña");
 			String usuario = selector.nextLine();
 			String contraseña = selector.nextLine();
-			actual = i.getMedico(usuario, contraseña);
+			actual = institucion.getMedico(usuario, contraseña);
 			opcion = 0;
 			if (actual != null) {
 				while (opcion != 1) {
