@@ -22,6 +22,10 @@ public class Menu {
 	public static void printOpcionFiltro() {
 		System.out.println("Quiere filtrar a los medicos por obra social y especialidad? 1-Si 2-No");
 	}
+
+	public static void printOpcionFiltroHorario() {
+		System.out.println("Quiere filtrar los turnos por fecha y horario? 1-Si 2-No");
+	}
 	
 	public static void printNumMedico() {
 		System.out.println("Ingrese el numero del medico");
@@ -36,7 +40,7 @@ public class Menu {
 	}
 	
 	public static void printOpcionHorario() {
-		System.out.println("Desea su turno por la mañana? 1-Si 2-No");
+		System.out.println("Desea su turno por la maï¿½ana? 1-Si 2-No");
 	}
 	
 	

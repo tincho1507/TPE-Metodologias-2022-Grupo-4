@@ -168,17 +168,17 @@ public class Main {
 		while (actual == null && intentos <= 3)
 		{
 			intentos ++;
-			System.out.println("Ingrese usuario y contraseña");
+			System.out.println("Ingrese usuario y contrasenia");
 			String usuario = selector.nextLine();
-			String contraseña = selector.nextLine();
-			actual = institucion.getMedico(usuario, contraseña);
+			String contrasenia = selector.nextLine();
+			actual = institucion.getMedico(usuario, contrasenia);
 			opcion = 0;
 			if (actual != null) {
 				while (opcion != 1) {
 					Menu.printMenuMedico();
 					opcion = Integer.parseInt(selector.nextLine());
 					if (opcion == 0) {
-						Menu.printOpcionFiltro();
+						Menu.printOpcionFiltroHorario();
 						opcion = Integer.parseInt(selector.nextLine());
 						if (opcion == 1) {
 							//Mostrar los turnos del medico en el rango de la fecha
@@ -187,7 +187,7 @@ public class Main {
 							Menu.printFechaFin();
 							LocalDate fechaFinLocal = generarFecha(selector);
 					
-							//Ingresa si quiere el turno por la mañana o la tarde
+							//Ingresa si quiere el turno por la maï¿½ana o la tarde
 							Menu.printOpcionHorario();
 							int turnoMananaSeleccionado = Integer.parseInt(selector.nextLine());
 				

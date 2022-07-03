@@ -70,9 +70,9 @@ public class InstitucionMedica {
 	
 	}
 	
-	public Medico getMedico(String usuario, String contraseña) {
+	public Medico getMedico(String usuario, String contrasenia) {
 		for (Medico m: medicos) {
-			if (m.login(usuario, contraseña))
+			if (m.login(usuario, contrasenia))
 				return m;
 		}
 		return null;

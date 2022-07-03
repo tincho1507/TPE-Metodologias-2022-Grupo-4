@@ -14,9 +14,9 @@ public class Medico extends Persona{
 	private ArrayList<String> diasLaborales;
 	private ArrayList<String> obrasSociales;
 	private String usuario;
-	private String contraseña;
+	private String contrasenia;
 	
-	public Medico(String nombre, String apellido, int dni, String mail, int nroMatricula, String especialidad, int horaInicio, int horaFin, ArrayList<String> diasLaborales, ArrayList<String> obrasSociales, String usuario, String contraseña) {
+	public Medico(String nombre, String apellido, int dni, String mail, int nroMatricula, String especialidad, int horaInicio, int horaFin, ArrayList<String> diasLaborales, ArrayList<String> obrasSociales, String usuario, String contrasenia) {
 		super(nombre, apellido, dni, mail);
 		this.nroMatricula = nroMatricula;
 		this.especialidad = especialidad;
@@ -26,7 +26,7 @@ public class Medico extends Persona{
 		this.diasLaborales = diasLaborales;
 		this.obrasSociales = obrasSociales;
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.contrasenia = contrasenia;
 	}
 	
 	public void add(Turno t) {
@@ -77,8 +77,8 @@ public class Medico extends Persona{
 		return salida;
 	}
 	
-	public boolean login(String usuario, String contraseña) {
-		if ((usuario.equals(this.usuario)) && (contraseña.equals(this.contraseña)))
+	public boolean login(String usuario, String contrasenia) {
+		if ((usuario.equals(this.usuario)) && (contrasenia.equals(this.contrasenia)))
 			return true;
 		return false;
 	}
