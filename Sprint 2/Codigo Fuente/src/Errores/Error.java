@@ -2,7 +2,7 @@ package Errores;
 
 public class Error {
 	
-	public static void getError(int error) {
+	public static void getError(int error, int cantidad) {
 		switch (error) {
 			case 0 : 
 				System.out.println("El medico no trabaja en la obra social tuya.");
@@ -27,19 +27,13 @@ public class Error {
 				break;
 			case 7 :
 				System.out.println("La opcion ingresada no es valida.");
-				break;				
-		}
-	
-	
-	
-	}
-	public static void getError(int error, int i) {
-		switch (error) {
+				break;
 			case 8 :
-				System.out.println("Usuario y contraseña invalidos. " + i + " de 3 intentos");
+				System.out.println("Usuario y contraseÃ±a invalidos. " + cantidad + " de 3 intentos");
 				break;
 		}
-	}
 	
 	
+	
+	}	
 }
