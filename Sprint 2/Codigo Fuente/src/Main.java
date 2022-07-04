@@ -75,7 +75,7 @@ public class Main {
 							medicoSeleccionado = medicosDisponible.get(indiceMedicoSeleccionado);
 						
 							if (medicoSeleccionado.trabajaObraSocial(paciente.getObraSocial())){
-								Error.getError0();
+								Error.getError(0);
 							}
 							System.out.println("El medico inicia a trabajar a las : " + medicoSeleccionado.getHoraInicio() + " y termina de trabajar a las : " + medicoSeleccionado.getHoraFin());
 				
@@ -97,7 +97,7 @@ public class Main {
 							//Se obtienen y se muestran los turnos disponibles
 							ArrayList<Turno> turnosDisponible = institucion.mostrarTurnosDisponibles(filtroCompuesto, medicoSeleccionado);
 							if (turnosDisponible.size() == 0){
-								Error.getError1();
+								Error.getError(1);
 								int proximaSemanaSeleccionada = Integer.parseInt(selector.nextLine());
 								if (proximaSemanaSeleccionada == 1){
 									filtroRango = new FiltroRango(fechaInicioLocal.plusDays(7), fechaFinLocal.plusDays(7));
@@ -126,19 +126,19 @@ public class Main {
 								
 								}
 								else
-									Error.getError2();
+									Error.getError(2);
 							} 
 							else
-								Error.getError3();
+								Error.getError(3);
 							}
 							else
-								Error.getError4();
+								Error.getError(4);
 						}
 						else
-							Error.getError5();
+							Error.getError(5);
 						}
 					else
-						Error.getError6();
+						Error.getError(6);
 				//Mostrar fechas del medico	
 					}
 				else
@@ -154,7 +154,7 @@ public class Main {
 							System.exit(0);
 						}						//Ver sus turnos anteriores
 						else
-							Error.getError7();
+							Error.getError(7);
 					}
 				}
 
@@ -210,7 +210,7 @@ public class Main {
 				}
 			}
 			else
-				Error.getError8(intentos);
+				Error.getError(8,intentos);
 		}
 	}
 		
